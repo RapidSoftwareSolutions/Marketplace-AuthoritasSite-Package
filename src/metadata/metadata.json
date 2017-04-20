@@ -1,0 +1,1239 @@
+{
+  "package": "AuthoritasSite",
+  "tagline": "AuthoritasSite API",
+  "description": "AuthoritasSite",
+  "image": "http:\/\/logo.clearbit.com\/authoritas.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-AuthoritasSite-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "authoritas.com",
+    "credentials": [
+      "apiKey",
+      "apiSecret",
+      "apiSalt"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "addResellerClient",
+      "description": "This method adds a new company to the Authoritas system as a child company of a reseller, and creates an admin user for the new company. ",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyName",
+          "type": "String",
+          "info": "Name of the company",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "Email address for the new admin user",
+          "required": true
+        },
+        {
+          "name": "password",
+          "type": "String",
+          "info": "Password for the new admin user",
+          "required": true
+        },
+        {
+          "name": "package",
+          "type": "String",
+          "info": "Pricing package for the new company",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateResellerClient",
+      "description": "This method allows resellers to update details of one of their reseller client companies.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "Id of the company",
+          "required": true
+        },
+        {
+          "name": "companyDetails",
+          "type": "JSON",
+          "info": "JSON-encoded array of data to be updated. Currently supported keys are “name” (to upate the company name) and “package” (to update the pricing package of the company)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getResellerClients",
+      "description": "This method gets a list of all the companies which are managed by the current partner.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addSite",
+      "description": "This method adds a new site to a company.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "Id of the company",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Url of the site",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "Name of the site",
+          "required": true
+        },
+        {
+          "name": "targetMarket",
+          "type": "String",
+          "info": "The market this web site is targetting.",
+          "required": true
+        },
+        {
+          "name": "primarySearchEngine",
+          "type": "String",
+          "info": "The primary search engine to check keyword ranks on.",
+          "required": true
+        },
+        {
+          "name": "jsonOptions",
+          "type": "JSON",
+          "info": "Optional JSON-formatted string with additional settings for the new site.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSites",
+      "description": "This method gets a list of all the sites this company is currently managing on Authoritas.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "Id of the company",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addAffiliate",
+      "description": "This method adds a new affiliate account to the Authoritas system.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyName",
+          "type": "String",
+          "info": "The name of the affiliate company",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The email address of the new affiliate user",
+          "required": true
+        },
+        {
+          "name": "affiliateDomain",
+          "type": "String",
+          "info": "The domain the site.instantAudit API requests will originate from",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addUser",
+      "description": "This method adds a new user to the Authoritas system.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "The unique ID of the company this user will belong to",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The email address of the user to be added",
+          "required": true
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "The two-character ISO code of the default language for the new user. See ISO Language Codes for valid language codes.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUsers",
+      "description": "This method gets a list of all user accounts belonging to the specified company.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "Id of the company",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "instantAudit",
+      "description": "This function performs an instant audit on the specified site using a sample search phrase to check the rank for this site and the competitors for this search phrase.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Url of the site",
+          "required": true
+        },
+        {
+          "name": "keyword",
+          "type": "String",
+          "info": "The main search phrase for this site",
+          "required": true
+        },
+        {
+          "name": "competitor1",
+          "type": "String",
+          "info": "The URL of the first competitor. An empty string will result in a ‘guessed’ competitor based on other domains in search results for the specified keyword",
+          "required": false
+        },
+        {
+          "name": "competitor2",
+          "type": "String",
+          "info": "The URL of the second competitor. An empty string will result in a ‘guessed’ competitor based on other domains in search results for the specified keyword",
+          "required": false
+        },
+        {
+          "name": "jsonOptions",
+          "type": "JSON",
+          "info": "An optional JSON formatted string with additional options.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "suggestKeywords",
+      "description": "This function will suggest keywords for a site by analysing the home page of the web site and the home page of any competitors which have been set for this site, or analysing all the crawled pages if we have crawled the sites. ",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "The url of the site to be analysed",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "suggestCompetitors",
+      "description": "This function will suggest competitors for a site by analysing the home page of the web site and the home page of any competitors which have been set for this site.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "The url of the site to be analysed",
+          "required": true
+        },
+        {
+          "name": "keyword",
+          "type": "String",
+          "info": "The keyword to suggest competitors on",
+          "required": true
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "info": "This is a country code used to determine the search engine to use when looking for competitors.The default is ‘gb’.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateKeywords",
+      "description": "This function will update the keywords for a specific campaign on a site.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "The url of the site to be added or updated",
+          "required": true
+        },
+        {
+          "name": "keywords",
+          "type": "Array",
+          "info": "An array of keywords",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The campaign ID to modify keywords on",
+          "required": true
+        },
+        {
+          "name": "monitor",
+          "type": "Boolean",
+          "info": "Should the passed keywords be monitored",
+          "required": true
+        },
+        {
+          "name": "operation",
+          "type": "String",
+          "info": "“add”, “update” or “delete”",
+          "required": true
+        },
+        {
+          "name": "keywordGroup",
+          "type": "String",
+          "info": "The name of the keyword group these keywords belong to. If not supplied or blank, this will default to “api”",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSite",
+      "description": "This function will update a site, or add it if it doesn’t already exist on the database. ",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "The url of the site to be added or updated",
+          "required": true
+        },
+        {
+          "name": "keywords",
+          "type": "Array",
+          "info": "An array of up to 10 keywords",
+          "required": true
+        },
+        {
+          "name": "competitors",
+          "type": "Array",
+          "info": "An array of up to 5 competitor URLs",
+          "required": true
+        },
+        {
+          "name": "monitor",
+          "type": "Boolean",
+          "info": "Indicate whether to continue monitoring this site. Used to disable monitoring for a site if they cancel their account.",
+          "required": true
+        },
+        {
+          "name": "jsonOptions",
+          "type": "JSON",
+          "info": "An optional JSON formatted string with additional options.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSiteData",
+      "description": "This function will return all the data we have about a site.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "The url of the site to be added or updated",
+          "required": true
+        },
+        {
+          "name": "previousDate",
+          "type": "String",
+          "info": "The date of the previous GetSiteData request. This date will be used to calculate new and lost links. The date should be in ISO date format (yyyy-mm-dd).",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The campaign ID to be reported on. Optional – if not supplied (or zero) this will default to the first campaign on the site.",
+          "required": false
+        },
+        {
+          "name": "dataLimits",
+          "type": "JSON",
+          "info": "JSON-formatted array of optional parameters to limit the number of results returned of each data type.",
+          "required": true
+        },
+        {
+          "name": "dataDate",
+          "type": "String",
+          "info": "Date to get data for, in ISO date format (yyyy-mm-dd).",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getOrganicKeywordsRankingByPeriod",
+      "description": "This function will retrieve from our database all organic keywords ranking (for all search engines setup) for the given site, campaign and period",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        },
+        {
+          "name": "period",
+          "type": "String",
+          "info": "The desired period (1day, 7days, 30days, lastmonth, 3months, 6months,  2016,  2015, wholecampaign)",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "The offset of the keywords ranking in our database",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Limit the number of returned keywords (max. value is 350)",
+          "required": true
+        },
+        {
+          "name": "domainAlias",
+          "type": "Boolean",
+          "info": "Active or disabled domain alias functionality. (This is only available for enterprise packages)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getOrganicKeywordsRankingByDate",
+      "description": "This function will retrieve from our database all organic keywords ranking (for all search engines setup) for the given site, campaign and date",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "String",
+          "info": "The desired date (format yyyy-mm-dd)",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "The offset of the keywords ranking in our database",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Limit the number of returned keywords (max. value is 350)",
+          "required": true
+        },
+        {
+          "name": "domainAlias",
+          "type": "Boolean",
+          "info": "Active or disabled domain alias functionality. (This is only available for enterprise packages)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUniversalKeywordsRanking",
+      "description": "This function will retrieve from our database all universal keywords ranking for the given site and campaign.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "The offset of the keywords ranking in our database",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Limit the number of returned keywords (max. value is 350)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getKeywordsGroups",
+      "description": "This function will retrieve from our database all the keywords groups defined for a specific site and campaign",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getCategories",
+      "description": "This function will retrieve from our database all the categories defined for a specific site and campaign",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMarketVisibility",
+      "description": "This function will retrieve from our database all the market visibility data available for a specific site ,campaign and date",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSalt",
+          "type": "credentials",
+          "info": "Api salt obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Api seret obtained from Authoritas",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Your domain",
+          "required": true
+        },
+        {
+          "name": "siteId",
+          "type": "Number",
+          "info": "The id of the desired site in our database",
+          "required": true
+        },
+        {
+          "name": "campaignId",
+          "type": "Number",
+          "info": "The id of the desired campaign in our database",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "String",
+          "info": "The desired date (format yyyy-mm-dd)",
+          "required": true
+        },
+        {
+          "name": "keywordGroupId",
+          "type": "String",
+          "info": "The id of the desired keyword group (-1: All keywords groups, 0: Un-grouped)",
+          "required": true
+        },
+        {
+          "name": "categoryId",
+          "type": "String",
+          "info": "The id of the desired category (-1: All categories)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
